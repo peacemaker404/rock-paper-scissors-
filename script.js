@@ -1,5 +1,5 @@
 function getComputerChoice() {
-  random_num = Math.random();
+  const random_num = Math.random();
   if (random_num < 1 / 3) {
     return "Rock";
   } else if (random_num < 2 / 3) {
@@ -7,4 +7,9 @@ function getComputerChoice() {
   } else {
     return "Scissors";
   }
+}
+
+function getHumanChoice() {
+  const choice = prompt("Print your choice");
+  return choice;
 }
