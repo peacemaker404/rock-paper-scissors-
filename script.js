@@ -1,9 +1,6 @@
-let humanScore = 0;
-let computerScore = 0;
-
 function playGame() {
-  const human = getHumanChoice().toLowerCase();
-  const computer = getComputerChoice();
+  let humanScore = 0;
+  let computerScore = 0;
 
   function getComputerChoice() {
     const random_num = Math.random();
@@ -65,17 +62,19 @@ function playGame() {
     }
   }
 
-  return playRound(human, computer);
+  for (let i = 1; i < 6; i++) {
+    const human = getHumanChoice().toLowerCase();
+    const computer = getComputerChoice();
+    playRound(human, computer);
+  }
+
+  if (humanScore > computerScore) {
+    console.log("Congratulations! You win!");
+  } else if (computerScore > humanScore) {
+    console.log("You lose!");
+  } else {
+    console.log("Tie");
+  }
 }
 
-for (let i = 1; i < 6; i++) {
-  playGame();
-}
-
-if (humanScore > computerScore) {
-  console.log("Congratulations! You win!");
-} else if (computerScore > humanScore) {
-  console.log("You lose!");
-} else {
-  console.log("Tie");
-}
+playGame();
